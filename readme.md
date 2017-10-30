@@ -18,4 +18,4 @@ git config --global user.email 이메일 주소
 
 ---
 
-[Seulbinim](http://github.com/seulbinim/)
+[Seulbinim](http://github.com/seulbinim/) Github 계정
