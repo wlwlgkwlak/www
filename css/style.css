@@ -1,26 +1,142 @@
-@charset "UTF-8";
-@import url("https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css");
-@import url("font.css");
-
-/* 스타일 초기화 */
-
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    font-size: 100%;
-    font: inherit;
-    vertical-align: baseline;
-}
-table {
-    border-collapse: collapse;
-    border-spacing: 0;
-}
-
-/* 본문 스타일 */
-
-body {
-    color: #181818;
-    background-color: #ffffff;
-    font-family: "Noto Sans", sans-serif;
-}
+    @charset "UTF-8";
+    @import url("https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css");
+    @import url("font.css");
+    /* 스타일 초기화 */
+    
+    html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+      margin: 0;
+      padding: 0;
+      border: 0;
+      font-size: 100%;
+      font: inherit;
+      vertical-align: baseline;
+    }
+    table {
+      border-collapse: collapse;
+      border-spacing: 0;
+    }
+    /* 숨김 콘텐츠 */
+    
+    legend, .search-form label {
+      background: lime;
+      width: 1px;
+      height: 1px;
+      margin: -1px;
+      font-size: 0;
+      line-height: 0;
+      clip: rect(1px, 1px, 1px, 1px);
+      overflow: hidden;
+    }
+    /* 링크 스타일 */
+    /* (color:#~~~; 부모가 물려준 값에 상관없이 방문을 했든 하지 않았든, 무조건 글자 색을 ~색으로 하겠다.) */
+    /* (color: inherit;상속 값을 주면 무조건 부모가 물려준 값이 우선 적용된다.) */
+    
+    a:link, a:visited {
+      color: inherit;
+      /* 글자 밑줄 없애기 */
+      text-decoration: none;
+    }
+    a:hover, a:focus {
+      color: red;
+    }
+    /* 반응형 콘텐츠 */
+    
+    .responsive {
+      max-width: 100%;
+      height: auto;
+    }
+    /* 본문 스타일 */
+    
+    html {
+      font-size: 10px;
+    }
+    body {
+      font-size: 1.4rem;
+      color: #181818;
+      background-color: hsl(0, 0%, 100%);
+      font-family: "Noto Sans", sans-serif;
+    }
+    /* Mobile */
+    
+    @media screen and (max-width: 999px) {
+      .container {
+        background: pink;
+      }
+      .header {
+        display: flex;
+        flex-direction: column;
+        background: #38302e;
+      }
+      .logo, .member, .search-form {
+        /* 안쪽 여백 주기 (html 부모 기본 픽셀이 10px이니 2rem인 20px */
+        /* 값을 두번 주면 1.위아래 2.좌우 3.아래쪽 4.왼쪽... (탑을 기준으로 시계 방향으로 적용-순서 공식) */
+        /* 0은 값을 생략해도 된다. */
+        padding: 1rem 2rem;
+      }
+      .logo {
+        width: 30%
+      }
+      .navigation {
+        widows: 50%;
+        height: auto;
+      }
+      .member {
+        background: #988574;
+        color: #ffffff;
+        /* 글자 앞 기호 없애는 법 */
+        list-style: none;
+        /* 순서의 default 값은 0이다. */
+        order: -1;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+      }
+      .member li {
+        margin-left: 1rem;
+      }
+      /* a는 인라인 상자라서 부모에게 영향을 주지 않는다. ex.패딩값 늘려도 전체 상자는 안 늘어남 */
+      /* 부모에게까지 영향을 주고 싶으면 member(부모)에서 블록 상자 처리를 해줘야 한다. */
+      .member a {
+        padding: 0.5rem 0;
+      }
+      .search-form {
+        background: skyblue;
+        padding-top: 0;
+      }
+      .search {
+        border: 1px solid #aaaaaa;
+        padding: 6px 2px 4px 10px;
+        border-radius: 5px;
+        margin-right: 1rem;
+        width: calc(100% - 5rem);
+        background: seagreen;
+      }
+      .btn-search {
+        position: relative;
+        border: 0;
+        overflow: hidden;
+        margin: 0;
+        padding: 0;
+        width: 3rem;
+        height: 3rem;
+        background: none;
+        font-size: 1rem;
+      }
+      .btn-search::after {
+        background-image: url("images/btn_search.png");
+        background-size: 100%;
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+    }
+    /* Desktop */
+    
+    @media screen and (min-width:1000px) {
+      .container {
+        background: yellow;
+      }
+    }
