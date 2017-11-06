@@ -3,6 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Hello HTML</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
@@ -23,14 +24,60 @@
       <form action="javascript:confirm('검색이 완료되었습니다.');" class="search-form">
         <fieldset>
           <legend>검색 폼</legend>
-          <label for="keyword">검색어</label>
-          <input type="search" class="search" id="keyword" placeholder="검색어를 입력하세요." required>
-          <button type="submit" class="btn-search">검색</button>
+          <div class="search-wrap">
+            <label for="keyword">검색어</label>
+            <input type="search" class="search" id="keyword" placeholder="검색어를 입력하세요." required>
+            <button type="submit" class="btn-search">검색</button>
+          </div>
         </fieldset>
       </form>
     </header>
     <nav class="navigation">
-      <img src="images/tree.jpg" alt=""></nav>
+      <h2 class="readable-hidden">메인 메뉴</h2>
+      <ul class="main menu">
+        <li>
+          <span>HTML에 대해</span>
+          <ul class="sub-menu">
+            <li><a href="#">HTML 소개</a></li>
+            <li><a href="#">레퍼런스 소개</a></li>
+            <li><a href="#">활용예제</a></li>
+          </ul>
+        </li>
+        <li>
+          <span>CSS에 대해</span>
+          <ul class="sub-menu">
+            <li><a href="#">CSS 소개</a></li>
+            <li><a href="#">CSS VS CSS3</a></li>
+            <li><a href="#">CSS 애니메이션</a></li>
+          </ul>
+        </li>
+        <li>
+          <span>웹표준/웹접근성</span>
+          <ul class="sub-menu">
+            <li><a href="#">웹표준이란?</a></li>
+            <li><a href="#">웹접근성의 개요</a></li>
+            <li><a href="#">HTML5의 현재와 미래</a></li>
+          </ul>
+        </li>
+        <li>
+          <span>묻고 답하기</span>
+          <ul class="sub-menu">
+            <li><a href="#">묻고 답하기</a></li>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">1대1 질문</a></li>
+          </ul>
+        </li>
+        <li>
+          <span>자료실</span>
+          <ul class="sub-menu">
+            <li><a href="#">공개 자료실</a></li>
+            <li><a href="#">이미지 자료실</a></li>
+            <li><a href="#">예제 자료실</a></li>
+          </ul>
+        </li>
+      </ul>
+      메뉴
+    </nav>
     <main class="main">콘텐츠</main>
     <footer class="footer">푸터</footer>
   </div>
