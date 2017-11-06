@@ -1,0 +1,55 @@
+  @charset "utf-8";
+  /* 텍스트 애니메이션 */
+  
+  @keyframes text {
+    /* 시작 */
+    0% {
+      font-size: 12px;
+      color: rgba(0, 0, 0, 0);
+      transform: translate (0, 0);
+      opacity: 0;
+    }
+    /* 끝 */
+    100% {
+      font-size: 24px;
+      color: rgba(0, 0, 0, 1);
+      transform: translate(200px, 50px);
+      opacity: 1;
+    }
+  }
+  .text {
+    background-color: pink;
+    height: 200px;
+  }
+  .text span {
+    background: yellow;
+    display: block;
+    position: absolute;
+    animation-name: text;
+    animation-duration: 3s;
+    /* 커진 상태로 유지시키고 싶을 때 */
+    animation-fill-mode: forwards;
+    /* 애니메이션 시작 전 딜레이 시간 */
+    animation-delay: 0.5s;
+    /* 투명도 */
+    opacity: 0;
+    /* 애니메이션 무한반복 */
+    animation-iteration-count: infinite;
+    /* 진자 운동처럼 swing 효과 줄 때 */
+    animation-direction: alternate;
+    /* 애니메이션 타이밍 (움직이는 흐름) */
+    animation-timing-function: ease-in-out;
+    /* 여태 적었던 속성들 한번에 속기법으로 적으면 이러하다.
+     animation: text 3s 0.5s forwards infinite ease-in-out; */
+  }
+  /* transition 애니메이션 */
+  
+  .circle {
+    width: 150px;
+    height: 150px;
+    transition: all 0.5s;
+    background-color: pink;
+  }
+  .circle:hover {
+    border-radius: 50%;
+  }
