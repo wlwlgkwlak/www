@@ -144,18 +144,84 @@ body {
     width: 100%;
     height: 100%;
   }
-  .navigation {
-    background-color: rgba(0, 0, 0, 0.7);
+  .menubar-container {
+    position: absolute;
+    top: 6rem;
+    right: 2rem;
+    width: 30px;
+    height: 30px;
+    /* IR기법 : 넘치는 글자 숨기기 */
+    overflow: hidden;
+  }
+  .btn-menubar {
+    /* 버튼은 백그라운드 없애면 디폴트 값 회색이 되니까 투명으로 처리해야 함 */
+    background-color: transparent;
+    position: absolute;
+    top: 0;
+    left: 0;
+    /* 숫자 크게 하면 z축 기준으로 위로 올라오는 것 */
+    z-index: 1;
+    border: 0;
+    padding: 30px 0 0 0;
+    /* 부모 영역과 크기 같아짐 */
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    /* 링크요소, 버튼요소는 default로 포인터 모양이 나오지만 박스 밖으로 나가있어서 이러한 특성을 줌 */
+    cursor: pointer;
+    outline-offset: -2px;
+  }
+  .menubar {
+    position: absolute;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 6px;
+    border-radius: 4px;
+    background-color: white;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .menubar-top {
+    top: 0;
+  }
+  .menubar-act .menubar-top {
+    top: 50%;
+    transform: rotate(45deg);
+    margin-top: -3px;
+  }
+  .menubar-middle {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  .menubar-act .menubar-middle {
+    transform: translate(-100%, -50%);
+  }
+  .menubar-bottom {
+    bottom: 0;
+  }
+  .menubar-act .menubar-bottom {
+    transform: rotate(-45deg);
+    top: 50%;
+    margin-top: -3px;
+  }
+  /* '동적'인 같은 값이 있을 때 더 아래쪽에 있는 것이 적용되니 상위 값을 적용시키려면 !important를 사용 */
+  .menu-act {
+    transform: translateX(0) !important;
+  }
+  .main-menu {
+    background: rgba(0, 0, 0, 0.85);
+    /* 중간단계 보여주기 : 메인메뉴와 메뉴액트 비교해서 바뀌는 것이 트랜지션인데 ?초동안 실행 (슬라이딩 효과) */
+    transition: all 0.2s;
     position: fixed;
     top: 0;
     left: 0;
     width: 70%;
     height: 100vh;
     color: #ffffff;
-  }
-  .main-menu {
-    margin: 2rem;
+    padding: 2rem;
     list-style: none;
+    transform: translateX(-100%);
   }
   .main-menu span {
     display: block;
@@ -256,5 +322,9 @@ body {
     display: block;
     padding: 5px 0;
     margin-top: 5px;
+  }
+  .menubar-container {
+    /* 기계적으로도, 눈으로 봐도 없애기 */
+    display: none;
   }
 }

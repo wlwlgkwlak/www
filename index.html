@@ -34,6 +34,12 @@
     </header>
     <nav class="navigation">
       <h2 class="readable-hidden">메인 메뉴</h2>
+      <div class="menubar-container">
+        <button type="button" class="btn-menubar">메인메뉴 열기</button>
+        <span class="menubar menubar-top"></span>
+        <span class="menubar menubar-middle"></span>
+        <span class="menubar menubar-bottom"></span>
+      </div>
       <ul class="main-menu">
         <li>
           <span>HTML에 대해</span>
@@ -72,7 +78,7 @@
           <ul class="sub-menu">
             <li><a href="#">공개 자료실</a></li>
             <li><a href="#">이미지 자료실</a></li>
-            <li><a href="#">예제 자료실</a></li>
+            <li><a href="#" class="last-menu">예제 자료실</a></li>
           </ul>
         </li>
       </ul>
@@ -81,6 +87,8 @@
     <main class="main">콘텐츠</main>
     <footer class="footer">푸터</footer>
   </div>
+  <script src="js/jquery.js"></script>
+  <script src="js/menu.js"></script>
 </body>
 
 </html>
