@@ -68,11 +68,136 @@ body {
   font-family: "Noto Sans", sans-serif;
 }
 
-/* Mobile */
+/* main 공통 */
 
+.main {
+  margin: 10px;
+}
+.main-section-heading {
+  margin: 1rem;
+  height: 60px;
+  padding-left: 65px;
+  background-repeat: no-repeat;
+  font-size: 2rem;
+  font-weight: 700;
+  background-image: url("images/sprite_main.png");
+}
+.main-section-heading span {
+  display: block;
+}
+.recommend-book-heading span {
+  color: #abd375;
+}
+.webcafe-news-heading span {
+  color: #e8ca58;
+}
+.webcafe-board-heading span {
+  color: #c7b39a;
+}
+.favorite-site-heading span {
+  color: #eea60a;
+}
+.twitter-heading span {
+  color: #6aaee6;
+}
+.webcafe-news-heading {
+  background-position: 0 -230px;
+}
+.webcafe-board-heading {
+  background-position: 0 -115px;
+}
+.favorite-site-heading {
+  background-position: 0 -345px;
+}
+.twitter-heading {
+  background-position: 0 -460px;
+}
+
+/* 고해상도 디스플레이 */
+
+@media screen and (device-aspect-ratio: 16/9) and (min-resolution:192dpi) {
+  .main-section-heading {
+    background-image: url("images/sprite_main_x2.png");
+    background-size: 50% 50%;
+  }
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and ( min--moz-device-pixel-ratio: 2), only screen and ( -o-min-device-pixel-ratio: 2/1), only screen and ( min-device-pixel-ratio: 2), only screen and ( min-resolution: 192dpi), only screen and ( min-resolution: 2dppx) {
+  .main-section-heading {
+    /* background-image: url("images/sprite_main_x2.png"); */
+    /* background-size: 50% 50%; */
+  }
+  /* Mobile */
+}
 @media screen and (max-width: 999px) {
+  /* 추천 서적 */
+  .recommend-book {
+    padding-bottom: 1rem;
+  }
+  .recommend-book-cover {
+    width: 50%;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .recommend-book-cover em {
+    display: block;
+  }
+  .recommend-book-detail {
+    text-align: center;
+    margin: 1.5rem;
+  }
+  .recommend-book-author, .recommend-book-author-name {
+    display: inline;
+  }
+  .recommend-book-grade {
+    color: #abd375;
+    font-size: 2rem;
+  }
+  .recommend-book-summary {
+    line-height: 1.5;
+    text-align: center;
+  }
+  /* 새 소식 */
+  .news-media {
+    text-align: center;
+  }
+  .news-summary {
+    line-height: 1.5;
+  }
+  .news-date {
+    display: block;
+    text-align: right;
+  }
+  /* 게시판 */
+  .board {
+    position: relative;
+  }
+  .board-list {
+    background-color: yellow;
+    list-style: none;
+  }
+  .board-list li {
+    margin-bottom: 10px;
+  }
+  .board-list a {
+    background-color: pink;
+    display: inline-block;
+    width: calc(100% - 80px);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .board-list time {
+    background-color: aqua;
+    float: right;
+  }
+  .board-more {
+    position: absolute;
+    top: 0.5rem;
+    right: 0;
+  }
+  /* 트위터 */
   .container {
-    background: pink;
+    /* background: pink; */
   }
   .header {
     display: flex;
@@ -231,6 +356,9 @@ body {
   .sub-menu li {
     margin: 0.5rem 2rem;
     list-style: none;
+  }
+  .main>section {
+    border-bottom: 1px solid #aaaaaa;
   }
 }
 
